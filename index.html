@@ -2,210 +2,362 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>Artesanato on-line</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Artesanato on-line</title>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <img class="logo" rc="" alt="">
-      <ul>
-        <li><a href="">Ínicio</a></li>
-        <li><a href="">Produtos</a></li>
-        <li><a href="">Artesões</a></li>
-        <li><a href="">Sobre</a></li>
-        <li><a href="">Contato</a></li>
-      </ul>
-      <img class="icon-fav" src="" alt="">
-      <img class="icon-perfil" src="" alt="">
+    <header>
 
-      <button class="btn-carrinho"><span><img class="icon-carrinho" src="" alt=""></span>carrinho</button>
-    </nav>
-  </header>
+        <nav>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                <div class="container">
+                    <img class="logo" src="img/log.png" alt="logo artesão" />
+                    <a class="navbar-brand" href="#">Início</a>
+                    <a class="navbar-brand" href="#">Produtos</a>
+                    <a class="navbar-brand" href="#">Artesãos</a>
+                    <a class="navbar-brand" href="#">Sobre</a>
+                    <a class="navbar-brand" href="#">Contato</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-  <section class="apresentacao" id="apresentacao">
-    <div>
-      <h1>Artesanato que conta histórias</h1>
-      <p>Descubra peças únicas feitas à mão por artesãos talentosos. Cada produto carrega a história e o carinho de quem o criou.</p>
-      <button>Explorar Produtos</button>
-      <button>Conheça os Artesãos</button>
-    </div>
-    <div><img src="" alt=""></div>
-  </section>
+                    <img class="logo" rc="" alt="">
+                    <ul>
+                    </ul>
+                    <img class="icon-fav" src="" alt="">
+                    <img class="icon-perfil" src="" alt="">
 
-  <main>
-    <h1>Nossos Produtos</h1>
-    <p>Explore nossa coleção de peças únicas, feitas com amor e dedicação por artesãos talentosos</p>
-    <ul>
-      <li><a href="">Todos</a></li>
-      <li><a href="">Cerâmica</a></li>
-      <li><a href="">Joias</a></li>
-      <li><a href="">Têxtil</a></li>
-      <li><a href="">Madeira</a></li>
-    </ul>
-    <div class="card-produto">
-      <img class="img-produto" src="" alt="">
-      <h2>Vaso de Cerâmica Artesanal</h2>
-      <p>por Maria Silva</p>
-      <span>R$ 89.90</span>
-      <button><img class="icon-carrinho" src="" alt="">Adicionar ao Carrinho</button>
-    </div>
-  </main>
+                    <button class="btn-carrinho"><span><img class="icon-carrinho" src="" alt=""></span>carrinho</button>
+            </nav>
+    </header>
 
-  <section class="artesoes" id="artesoes">
-    <h1>Conheça Nossos Artesãos</h1>
-    <p>Talentosos criadores que transformam matéria-prima em arte, preservando técnicas tradicionais e criando peças únicas</p>
+    <section class="apresentacao align-items-center row py-5" id="apresentacao">
 
-    <div class="card-artesao">
-      <img class="img-artesao" src="" alt="">
-      <h2>Maria Silva</h2>
-      <p>Cerâmica</p>
-      <p>Minas Gerais</p>
-      <p>45 produtos</p>
-      <p>3 prêmios</p>
-    </div>
+        <div class="col">
+            <div class="align-items-center  g-4 col-md-6">
+                <h1 class="text-warning ">Artesanato que conta histórias</h1>
+                <p class="text-muted">Descubra peças únicas feitas à mão por artesãos talentosos. Cada produto carrega a história e o carinho de quem o criou.</p>
+                <button class="btn btn-warning ">Explorar Produtos</button>
+                <button class="btn btn-dark">Conheça os Artesãos</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class=""><img src="https://images.unsplash.com/photo-1704481235083-b70ae2ffee2b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="" alt="" style="height: 400px;"></div>
+        </div>
+    </section>
 
-    <div class="container-cadastro-artesao">
-      <h1>Você é um artesão?</h1>
-      <p>Junte-se à nossa comunidade e compartilhe suas criações com milhares de pessoas que valorizam o trabalho artesanal e a autenticidade</p>
-      <button>Cadastre-se como Artesão</button>
-      <button>Saiba Mais</button>
-    </div>
-  </section>
-
-  <section class="info" id="info">
-    <div>
-      <h1>Valorizando o Artesanato Brasileiro</h1>
-      <p>Somos uma plataforma dedicada a conectar artesãos talentosos com pessoas que valorizam produtos únicos, feitos à mão e cheios de história.
-
-        Acreditamos que cada peça artesanal carrega consigo a identidade cultural, a tradição e o amor de quem a criou. Nossa missão é dar visibilidade a esses criadores e facilitar o acesso a produtos exclusivos e sustentáveis.
-
-        Ao comprar em nossa plataforma, você não está apenas adquirindo um produto, mas apoiando famílias, preservando tradições e promovendo o consumo consciente.</p>
-    </div>
-
-    <div>
-      <div class="card-info">
-        <img src="" alt="">
-        <h1>Feito com Amor</h1>
-        <p>Cada peça é criada com dedicação e paixão por artesãos talentosos</p>
-      </div>
-
-      <div class="card-info">
-        <img src="" alt="">
-        <h1>Feito com Amor</h1>
-        <p>Cada peça é criada com dedicação e paixão por artesãos talentosos</p>
-      </div>
-
-      <div class="card-info">
-        <img src="" alt="">
-        <h1>Feito com Amor</h1>
-        <p>Cada peça é criada com dedicação e paixão por artesãos talentosos</p>
-      </div>
-
-      <div class="card-info">
-        <img src="" alt="">
-        <h1>Feito com Amor</h1>
-        <p>Cada peça é criada com dedicação e paixão por artesãos talentosos</p>
-      </div>
-    </div>
-  </section>
-
-  <address>
-    <h1>Entre em Contato</h1>
-    <p>Tem alguma dúvida ou sugestão? Estamos aqui para ajudar!</p>
-
-    <div>
-      Email <br>
-      contato@artesaoonline.com.br <br>
-    </div>
-
-    <div>
-      Telefone <br>
-      (11) 9999-9999 <br>
-    </div>
-
-    <div>
-      Endereço <br>
-      São Paulo, SP
-      Brasil
-    </div>
-  </address>
-
-  <form action="">
-    <div>
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome">
-    </div>
-
-    <div>
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email">
-    </div>
-
-    <div>
-      <label for="assunto">Assunto</label>
-      <input type="text" id="assunto" name="assunto">
-    </div>
-
-    <div>
-      <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
-    </div>
-  </form>
-
-  <footer>
-    <div>
-
-      <div>
-        <h1>Artesanato on-line</h1>
-        <p>Conectando artesãos talentosos com pessoas que valorizam o artesanato autêntico e sustentável.
-        <div><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+    <main class="container my-5 text-center">
+        <h1 class="mb-3 text-warning">Nossos Produtos</h1>
+        <p class="mb-5 text-muted">
+            Explore nossa coleção de peças únicas, feitas com amor e dedicação por artesãos talentosos.
         </p>
-      </div>
 
-      <div>
-        <h1>Links Rápidos</h1>
-        <ul>
-          <li><a href="">Ínicio</a></li>
-          <li><a href="">Produtos</a></li>
-          <li><a href="">Artesões</a></li>
-          <li><a href="">Sobre</a></li>
-          <li><a href="">Contato</a></li>
+        <!-- Filtros de categoria -->
+        <ul class="nav justify-content-center mb-5">
+            <li class="nav-item"><a href="#" class="nav-link active text-warning">Todos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-dark">Cerâmica</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-dark">Joias</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-dark">Têxtil</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-dark">Madeira</a></li>
         </ul>
-      </div>
 
-      <div>
-        <h1>Categorias</h1>
-        <ul>
-          <li><a href="">Cerâmica</a></li>
-          <li><a href="">Joias Artesanais</a></li>
-          <li><a href="">Têxtil</a></li>
-          <li><a href="">Madeira</a></li>
-          <li><a href="">Decoração</a></li>
-        </ul>
-      </div>
+        <!-- Cards de produtos -->
+        <div class="container">
+            <div class="row gap-2 ">
+                <!-- Card 1 -->
+                <div class="col-md-4 py-2">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
+                        <div class="card-body">
+                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
+                            <p class="card-text text-muted mb-1">por Maria Silva</p>
+                            <span class="fw-bold text-warning d-block mb-3">R$ 89,90</span>
+                            <button class="btn btn-warning w-100">
+                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Card 2 -->
+                <div class="col-md-4 py-2">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
+                        <div class="card-body">
+                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
+                            <p class="card-text text-muted mb-1">por Maria Silva</p>
+                            <span class="fw-bold text-warning d-block mb-3">R$ 89,90</span>
+                            <button class="btn btn-warning w-100">
+                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-      <div>
-        <h1>Suporte</h1>
-        <ul>
-          <li><a href="">Central de Ajuda</a></li>
-          <li><a href="">Política de Devolução</a></li>
-          <li><a href="">Termos de Uso</a></li>
-          <li><a href="">Privacidade</a></li>
-          <li><a href="">FAQ</a></li>
-        </ul>
-      </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 py-2">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed " alt="Vaso de Cerâmica Artesanal">
+                        <div class="card-body">
+                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
+                            <p class="card-text text-muted mb-1">por Maria Silva</p>
+                            <span class="fw-bold text-warning d-block mb-3">R$ 89,90</span>
+                            <button class="btn btn-warning w-100">
+                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-4 py-2">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
+                        <div class="card-body">
+                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
+                            <p class="card-text text-muted mb-1">por Maria Silva</p>
+                            <span class="fw-bold text-warning d-block mb-3">R$ 89,90</span>
+                            <button class="btn btn-warning w-100">
+                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção dos Artesãos -->
+    <section class="py-2 bg-light text-center" id="artesoes">
+        <div class="container">
+            <h1 class="mb-3 text-warning">Conheça Nossos Artesãos</h1>
+            <p class="text-muted mb-5">
+                Talentosos criadores que transformam matéria-prima em arte, preservando técnicas tradicionais e criando peças únicas.
+            </p>
+
+            <!-- Card de artesão -->
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1719154717733-d37860cdee24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687.jpg" class="card-img-top card-img-fixed " alt="Maria Silva">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Maria Silva</h5>
+                            <p class="text-muted mb-0">Têxtil — Minas Gerais</p>
+                            <small class="text-secondary">45 produtos | 3 prêmios</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1520207588543-1e545b20c19e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=871" class="card-img-top card-img-fixed " alt="Maria Silva">
+                        <div class="card-body">
+                            <h5 class="card-title">Ana Costa</h5>
+                            <p class="text-muted mb-0">Pintura — Minas Gerais</p>
+                            <small class="text-secondary">45 produtos | 3 prêmios</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1761410403735-108d974d9a76?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="card-img-top card-img-fixed" alt="Maria Silva">
+                        <div class="card-body">
+                            <h5 class="card-title">João Santos</h5>
+                            <p class="text-muted mb-0">Cerâmica — Minas Gerais</p>
+                            <small class="text-secondary">45 produtos | 3 prêmios</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Convite ao cadastro -->
+            <div class="mt-5 p-4 bg-warning text-dark rounded">
+                <h2>Você é um artesão?</h2>
+                <p class="mb-4">
+                    Junte-se à nossa comunidade e compartilhe suas criações com milhares de pessoas que valorizam o trabalho artesanal.
+                </p>
+                <button class="btn btn-dark me-2">Cadastre-se como Artesão</button>
+                <button class="btn btn-outline-dark">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de informações -->
+    <section class="info py-2">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h1 class="text-warning mb-3">Valorizando o Artesanato Brasileiro</h1>
+                    <p class="text-muted">
+                        Somos uma plataforma dedicada a conectar artesãos talentosos com pessoas que valorizam produtos únicos,
+                        feitos à mão e cheios de história. Ao comprar em nossa plataforma, você apoia famílias, preserva tradições
+                        e promove o consumo consciente.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-6 py-2">
+                            <div class="card border-0 shadow-sm text-center p-3">
+                                <img src="icone1.png" class="mx-auto mb-2" width="50" alt="">
+                                <h5 class="text-warning">Feito com Amor</h5>
+                                <p class="small text-muted">Cada peça é criada com dedicação e paixão.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 py-2">
+                            <div class="card border-0 shadow-sm text-center p-3">
+                                <img src="icone2.png" class="mx-auto mb-2" width="50" alt="">
+                                <h5 class="text-warning">Sustentável</h5>
+                                <p class="small text-muted">Valorizamos práticas responsáveis e ecológicas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <div class="card border-0 shadow-sm text-center p-3">
+                                <img src="icone3.png" class="mx-auto mb-2" width="50" alt="">
+                                <h5 class="text-warning">Autêntico</h5>
+                                <p class="small text-muted">Cada produto conta uma história única.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <div class="card border-0 shadow-sm text-center p-3">
+                                <img src="icone4.png" class="mx-auto mb-2" width="50" alt="">
+                                <h5 class="text-warning">Feito à Mão</h5>
+                                <p class="small text-muted">Produção artesanal com atenção aos detalhes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row justify-content-center bg-light">
+        <address class="py-5 col-3">
+            <h1 class="text-warning">Entre em Contato</h1>
+            <p class="text-muted">Tem alguma dúvida ou sugestão? Estamos aqui para ajudar!</p>
+            <div class="col">
+                <div class="border-0 shadow-sm text-center p-3 bg">
+                    <span class="text-warning">Email</span> <br>
+                    <span class="text-muted">contato@artesaoonline.com.br </span><br>
+                </div>
+            </div>
+
+            <div class="col py-5">
+                <div class="border-0 shadow-sm text-center p-3 bg">
+                    <span class="text-warning">Telefone</span> <br>
+                    <span class="text-muted">(11) 9999-9999</span> <br>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="border-0 shadow-sm text-center p-3 bg">
+                    <span class="text-warning">Endereço</span> <br>
+                    <span class="text-muted">São Paulo, SP
+                        Brasil</span>
+                </div>
+            </div>
+        </address>
+
+        <form action="" class="p-4 border rounded bg-light col-4">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com">
+            </div>
+
+            <div class="mb-3">
+                <label for="assunto" class="form-label">Assunto</label>
+                <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Digite o assunto">
+            </div>
+
+            <div class="mb-3">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
     </div>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
 
-    <div>
-      <span>© 2025 Artesão Online. Todos os direitos reservados.</span>
-    </div>
 
-  </footer>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Artesanato On-line</h5>
+                    <p>Conectando artesãos talentosos com pessoas que valorizam o artesanato autêntico e sustentável.</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <img src="icone1.png" alt="ícone 1" width="24">
+                        <img src="icone2.png" alt="ícone 2" width="24">
+                        <img src="icone3.png" alt="ícone 3" width="24">
+                        <img src="icone4.png" alt="ícone 4" width="24">
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Início</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Produtos</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Artesãos</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Sobre</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Categorias</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Cerâmica</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Joias Artesanais</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Têxtil</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Madeira</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Decoração</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Suporte</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Central de Ajuda</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Política de Devolução</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Termos de Uso</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacidade</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <footer>
+                <hr class="mb-4 mt-4 text-white">
+
+                <div class="row align-items-center">
+                    <div class="col-md-8 col-lg-8">
+                        <p class="mb-0">&copy-2; 2025 Artesanato On-line — Todos os direitos reservados.</p>
+                    </div>
+                    <div class="col-md-4 col-lg-4 text-md-end">
+                    </div>
+                </div>
+        </div>
+
+
+    </footer>
 
 </body>
 
