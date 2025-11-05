@@ -10,10 +10,10 @@
   <title>Artesanato on-line/Vaso de Cerâmica Artesanal</title>
 </head>
 
-<body>
+<body class="bg-light">
   <main class="container py-5">
     <div class="row ">
-      <div class="img-produto col" style="width: 500;">
+      <div class="img-produto col-md-4">
         <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" alt="" class="">
       </div>
       <div class="produto col">
@@ -23,18 +23,17 @@
           <h1 class="">Vaso de Cerâmica Artesanal</h1>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <!--Valor do Produto-->
-          <span class="h1 text-warning">R$ 89.90</span>
+          <span class="h1 cor-p1">R$ 89.90</span>
 
           <!-- Perfil vendedor -->
-          <div class="perfil-vendedor container bg-creme mt-5">
+          <div class="perfil-vendedor container rounded bg-p1 mt-5 cor-branca">
             <div class="row align-items-center">
-              <div class="col-sm-2
-              ">
-                <img src="assets/icons/user-profile-svgrepo-com.svg" alt="" class="icon bg-warning rounded">
+              <div class="col-sm-2">
+                <img src="https://images.unsplash.com/photo-1719154717733-d37860cdee24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687.jpg" alt="" class="icon bg-warning icon-perfil-vendedor ">
               </div>
               <div class="col">
                 <p>
-                  <span class="small text-muted">Criado por</span><br>
+                  <span class="small">Criado por</span><br>
                   Maria Silva
                 </p>
               </div>
@@ -54,21 +53,32 @@
           <!-- Disponível em estoque -->
           <span class="small text-muted">8 disponíveis</span>
           <!--Botão para adicionar ao carrinho-->
-          <button class="btn-carrinho col mt-3">Adicionar ao carrinho</button>
+          <button class="btn-carrinho col mt-3 ">Adicionar ao carrinho</button>
         </div>
         <!--Botões adicionais-->
         <div class="row mt-3">
           <div class="col">
-            <button class="btn col">Favoritar</button>
+            <button class="btn col bg-branco border text">Favoritar</button>
           </div>
           <div class="col">
-            <button class="btn col">Compartilhar</button>
+            <button class="btn col bg-branco border">Compartilhar</button>
           </div>
         </div>
 
+        <div class="row mt-5">
+          <div class="col">
+            <ul class="small text-muted">
+              <li> Frete grátis para compras acima de R$ 150</li>
+              <li>Garantia de 30 dias</li>
+              <li>Troca grátis em até 7 dias</li>
+              <li>Envio para todo o Brasil</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="descica-produto row">
+
+    <div class="descica-produto container bg-branco rounded mt-5 py-3 border">
       <h2>Descrição</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie leo sed nibh ullamcorper egestas. Maecenas id mauris cursus, faucibus turpis eget, molestie nisi. Nam metus enim, pellentesque in imperdiet et, molestie eu felis. Nunc scelerisque dolor id sollicitudin malesuada.
 
@@ -85,10 +95,6 @@
         <li>Phasellus pulvinar arcu quis lacus pulvinar consectetur.</li>
         <li>Maecenas eu eros vel enim rhoncus malesuada.</li>
       </ul>
-
-
-
-
     </div>
   </main>
 

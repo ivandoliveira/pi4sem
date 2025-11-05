@@ -1,8 +1,45 @@
 .bg-creme {
   background-color: rgba(255, 234, 208, 0.521);
 }
+.bg-branco {
+  background-color: #ffffff;
+}
+.bg-p1 {
+  background-color: #e67e22;
+}
+
+.cor-branca {
+  color: #ffffff;
+}
+.cor-p1 {
+  color: #e67e22;
+}
+
+.logo-login {
+  width: 80px;
+}
+
+#carrinho-de-compras img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
 
 .btn-carrinho {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.checkbox {
+  width: 10px;
+  height: 10px;
+}
+
+#carrinho-de-compras .btn-carrinho {
   background-color: #e67e22;
   color: white;
   border: none;
@@ -47,12 +84,6 @@
   height: 200px;
   object-fit: cover;
   width: 100%;
-}
-
-.card-img-carrinho {
-  height: 100px;
-  object-fit: contain;
-  width: 100px;
 }
 
 img {

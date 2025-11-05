@@ -10,30 +10,29 @@
   <title>Artesanato on-line</title>
 </head>
 
-<body>
-  <aside>
+<body class="bg-light" id="carrinho-de-compras">
+  <aside class="container">
     <!-- Header-->
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1 class="h5">Carrinho de compras</h1>
-          <p class="4">Revise os produtos antes de finalizar a compra</p>
-        </div>
-        <div class="col">
-          <span>itens</span>
-        </div>
+
+    <div class="row justify-content-center">
+
+      <div class="">
+        <h1 class="h-4 cor-p1 mt-5">Carrinho de compras</h1>
+        <p class="text-muted">Revise os produtos antes de finalizar a compra</p>
       </div>
     </div>
+
     <!-- Produtos -->
-    <div class="container">
-      <div class="row">
+    <div class="bg-branco py-4 rounded container">
+      <div class="row justify-content-center  ">
+
         <!-- Imagem produto -->
         <div class="col">
           <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" alt="" class="card-img-carrinho">
         </div>
         <!-- Detalhes da compra -->
         <div class="col">
-          <h1 class="h3">Nome do Produto</h1>
+          <h1 class="h5">Nome do Produto</h1>
           <p class="small">por: Nome Vendedor</p>
           <span>Quantidade:</span>
         </div>
@@ -43,33 +42,37 @@
           <span>Valor de cada produto</span>
         </div>
       </div>
-    </div>
-    <!-- Valor -->
-    <div class="container">
-      <div class="row">
-        <div class="col">Subtotal:</div>
-        <div class="col">R$ Valor</div>
-      </div>
 
-      <div class="row">
-        <div class="col">Frete</div>
-        <div class="col">Grátis</div>
-      </div>
+      <!-- Valor -->
+      <div class="container">
+        <div class="row">
+          <div class="col">Subtotal:</div>
+          <div class="col">R$ Valor</div>
+        </div>
+
+        <div class="row">
+          <div class="col">Frete</div>
+          <div class="col">Grátis</div>
+        </div>
 
 
-      <div class="row">
-        <div class="col">Total</div>
-        <div class="col">Valor</div>
+        <div class="row">
+          <div class="col">Total</div>
+          <div class="col">Valor</div>
+        </div>
       </div>
     </div>
     <!-- Botões -->
     <div>
-      <button class="btn-carrinho">Finalizar Compra</button>
+      <a href="finalizar-compra.html">
+        <button class="btn-carrinho col mt-3">Finalizar Compra</button>
+      </a>
     </div>
     <div>
-      <button class="btn">Continuar Comprando</button>
+      <button class="btn col mt-2 border cor">Continuar Comprando</button>
     </div>
-    <button>Limpar Carrinho</button>
+    <button class="col mt-3 border btn btn-danger rounded">Limpar Carrinho</button>
+
   </aside>
 
 </body>
