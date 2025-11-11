@@ -4,91 +4,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <title>Artesanato on-line/login e cadastro</title>
+  <title>Login e Cadastro - Artesanato Online</title>
 </head>
 
-<body class="bg-light" id="login-e-cadastro">
+<body class="bg-light">
   <main class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-lg-8 col-xl-6">
+        <!-- Header -->
+        <div class="text-center mb-5">
+          <img class="logo-login mb-3" src="assets/icons/pottery.png" alt="Logo Artesanato Online" width="80">
+          <h1 class="cor-p1">Bem-vindo de volta!</h1>
+          <p class="text-muted">Entre ou crie sua conta para acessar produtos exclusivos</p>
+        </div>
 
-    <!--Tela de login-->
+        <!-- Navegação -->
+        <div class="card mb-4">
+          <div class="card-header bg-white border-0">
+            <ul class="nav nav-pills nav-justified" id="authTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active cor-p1" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">
+                  Entrar
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link cor-p1" id="cadastro-tab" data-bs-toggle="tab" data-bs-target="#cadastro" type="button" role="tab">
+                  Cadastrar
+                </button>
+              </li>
+            </ul>
+          </div>
 
-    <div class="row justify-content-center text-center mt-5">
-      <div class="">
-        <img class="logo-login" src="assets/icons/pottery.png" alt="">
-        <h1>Bem-vindo!</h1>
-        <p class="text-muted">Entre ou crie sua conta para acessar produtos exclusivos</p>
-        <div class="bg-p1 bg-light">
-          <span class="col">Entrar</span>
-          <span class="col">Cadastrar</span>
+          <div class="card-body p-4">
+            <div class="tab-content" id="authTabsContent">
+
+              <!-- Tab de Login -->
+              <div class="tab-pane fade show active" id="login" role="tabpanel">
+                <form id="form-login" class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label for="login-email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="login-email" name="email" required placeholder="exemplo@dominio.com">
+                    <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="login-password" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="login-password" name="password" required minlength="6">
+                    <div class="invalid-feedback">A senha deve ter pelo menos 6 caracteres.</div>
+                  </div>
+
+                  <div class="mb-3 d-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="lembrar-me" name="lembrar-me">
+                      <label class="form-check-label" for="lembrar-me">Lembrar-me</label>
+                    </div>
+                    <a href="#" class="text-decoration-none cor-p1" id="esqueci-senha">Esqueci a senha</a>
+                  </div>
+
+                  <button type="submit" class="btn btn-carrinho w-100 py-2">
+                    <span id="login-loading" class="spinner-border spinner-border-sm me-2" style="display: none;"></span>
+                    Entrar
+                  </button>
+
+                  <div class="text-center mt-3">
+                    <small class="text-muted">
+                      Ao entrar, você concorda com nossos
+                      <a href="#" class="text-decoration-none cor-p1">Termos de Uso</a> e
+                      <a href="#" class="text-decoration-none cor-p1">Política de Privacidade</a>
+                    </small>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Tab de Cadastro -->
+              <div class="tab-pane fade" id="cadastro" role="tabpanel">
+                <form id="form-cadastro" class="needs-validation" novalidate>
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <label for="cadastro-nome" class="form-label">Nome Completo</label>
+                      <input type="text" class="form-control" id="cadastro-nome" name="nome-completo" required placeholder="Digite seu nome completo">
+                      <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="cadastro-email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="cadastro-email" name="email" required placeholder="exemplo@dominio.com">
+                    <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="cadastro-telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="cadastro-telefone" name="telefone" required placeholder="(11) 99999-9999">
+                    <div class="invalid-feedback">Por favor, insira um telefone válido.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="cadastro-senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="cadastro-senha" name="senha" required minlength="6" placeholder="Mínimo 6 caracteres">
+                    <div class="invalid-feedback">A senha deve ter pelo menos 6 caracteres.</div>
+                    <div class="form-text">Use letras, números e caracteres especiais para uma senha mais segura.</div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="cadastro-confirmar-senha" class="form-label">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="cadastro-confirmar-senha" name="confirmar-senha" required minlength="6">
+                    <div class="invalid-feedback">As senhas devem ser iguais.</div>
+                  </div>
+
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="termos-uso" name="termos-uso" required>
+                    <label class="form-check-label" for="termos-uso">
+                      Concordo com os
+                      <a href="#" class="text-decoration-none cor-p1">Termos de Uso</a> e
+                      <a href="#" class="text-decoration-none cor-p1">Política de Privacidade</a>
+                    </label>
+                    <div class="invalid-feedback">Você deve concordar com os termos para se cadastrar.</div>
+                  </div>
+
+                  <button type="submit" class="btn btn-carrinho w-100 py-2">
+                    <span id="cadastro-loading" class="spinner-border spinner-border-sm me-2" style="display: none;"></span>
+                    Criar Conta
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Link para voltar à loja -->
+        <div class="text-center">
+          <a href="index.html" class="text-decoration-none cor-p1">
+            Voltar para a loja
+          </a>
         </div>
       </div>
     </div>
-
-    <div class="row justify-content-center mt-4">
-      <form action="" class="form-login col-lg-5 bg-branco rounded py-4">
-
-        <div class="">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com">
-        </div>
-
-        <div class="">
-          <label for="password" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="password" name="password">
-        </div>
-
-        <div>
-          <div class="row mt-4 align-items-center">
-            <label class="col" for="checkbox">Lembrar-me</label>
-            <input class="col checkbox" type="checkbox" class="form-control" id="checkbox" name="checkbox">
-          </div>
-
-        </div>
-
-        <button type="submit" class="btn bg-p1 cor-branca
-          w-100">Entrar</button>
-        <span class="align-items-center">Esqueci a senha</span>
-      </form>
-
-    </div>
-    <!--Tela de Cadastro-->
-    <div class="row justify-content-center mt-4">
-      <form action="" class="form-cadastro col-lg-5 bg-branco rounded py-4">
-
-        <div class="mb-3">
-          <label for="nome-completo" class="form-label">Nome Completo </label>
-          <input type="text" class="form-control" id="nome-completo" name="nome-completo" placeholder="Digite seu nome completo">
-        </div>
-
-        <div class="mb-3">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com">
-        </div>
-
-        <div class="mb-3">
-          <label for="tel" class="form-label">Telefone</label>
-          <input type="tel" class="form-control" id="tel" name="tel" placeholder="(11 99999-9999)">
-        </div>
-
-        <div class="mb-3">
-          <label for="password" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="password" name="password">
-        </div>
-
-        <div class="mb-3">
-          <label for="password-check-check" class="form-label">Confirmar Senha</label>
-          <input type="password" class="form-control" id="password-check" name="password-check">
-        </div>
-
-        <button type="submit" class="btn bg-p1 cor-branca
-          w-100">Criar Conta</button>
-      </form>
-    </div>
   </main>
 
+  <!-- Esqueci a Senha -->
+  <div class="modal fade" id="modalEsqueciSenha" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title cor-p1">Recuperar Senha</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Digite seu e-mail para receber as instruções de recuperação de senha.</p>
+          <form id="form-esqueci-senha">
+            <div class="mb-3">
+              <label for="recuperar-email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="recuperar-email" required>
+            </div>
+            <button type="submit" class="btn btn-carrinho w-100">Enviar Instruções</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificação -->
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="toastAuth" class="toast" role="alert">
+      <div class="toast-header">
+        <strong class="me-auto cor-p1" id="toast-title">Notificação</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body" id="toast-message"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 
 </html>

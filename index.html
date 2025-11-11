@@ -12,46 +12,67 @@
 
 <body>
     <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container">
+                <img class="logo icon" src="assets/icons/pottery.png" alt="logo artesão" />
+                <a class="navbar-brand" href="#">Início</a>
+                <a class="navbar-brand" href="#">Produtos</a>
+                <a class="navbar-brand" href="#">Artesãos</a>
+                <a class="navbar-brand" href="#">Sobre</a>
+                <a class="navbar-brand" href="#">Contato</a>
 
-        <nav>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-                <div class="container">
-                    <img class="logo icon" src="assets/icons/pottery.png" alt="logo artesão" />
-                    <a class="navbar-brand" href="#">Início</a>
-                    <a class="navbar-brand" href="#">Produtos</a>
-                    <a class="navbar-brand" href="#">Artesãos</a>
-                    <a class="navbar-brand" href="#">Sobre</a>
-                    <a class="navbar-brand" href="#">Contato</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <img class="logo" rc="" alt="">
-                    <ul>
-                    </ul>
-                    <img class="icon-fav icon" src="assets/icons/like-heart-svgrepo-com.svg" alt="">
-                    <img class="icon-perfil icon" src="assets/icons/user-profile-svgrepo-com.svg" alt="">
-                    <a href="carrinho-de-compras.html">
-                        <button class="btn-carrinho ">
-                            <span><img class="icon-carrinho icon" src="assets/icons/bag-shopping-svgrepo-com.svg" alt=""></span>carrinho
-                        </button>
+                <div class="dropdown">
+                    <a class="navbar-brand dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <img class="icon-perfil icon" src="assets/icons/user-profile-svgrepo-com.svg" alt="Perfil">
                     </a>
-            </nav>
+                    <ul class="dropdown-menu">
+                        <li id="user-menu-loggedin" style="display: none;">
+                            <span class="dropdown-item-text">
+                                Olá, <span id="user-name"></span>
+                            </span>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Meus Pedidos</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="logoutUser()">Sair</a></li>
+                        </li>
+                        <li id="user-menu-loggedout" style="display: none;">
+                            <a class="dropdown-item" href="login-cadastro.html">Entrar / Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <!-- Carrinho -->
+                    <div class="carrinho-wrapper position-relative">
+                        <button class="btn btn-carrinho position-relative" onclick="carrinho.mostrarCarrinho()">
+
+                            Carrinho
+                            <span id="contador-carrinho" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                                0
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="apresentacao container py-2" id="apresentacao">
+    <section class="bg-light">
+        <div class="apresentacao container py-2 " id="apresentacao">
 
-        <div class="row align-items-center py-5">
-            <div class="col ">
-                <h1 class="cor-p1 ">Artesanato que conta histórias</h1>
-                <p class="text-muted">Descubra peças únicas feitas à mão por artesãos talentosos. Cada produto carrega a história e o carinho de quem o criou.</p>
-                <button class="btn btn-carrinho ">Explorar Produtos</button>
-                <button class="btn btn-dark">Conheça os Artesãos</button>
-            </div>
+            <div class="row align-items-center py-5">
+                <div class="col ">
+                    <h1 class="cor-p1 ">Artesanato que conta histórias</h1>
+                    <p class="text-muted">Descubra peças únicas feitas à mão por artesãos talentosos. Cada produto carrega a história e o carinho de quem o criou.</p>
+                    <button class="btn btn-carrinho ">Explorar Produtos</button>
+                    <button class="btn btn-dark">Conheça os Artesãos</button>
+                </div>
 
 
-            <div class="col py-5">
-                <img src="https://images.unsplash.com/photo-1704481235083-b70ae2ffee2b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="rounded" alt="" style="height: 400px;">
+                <div class="col py-5">
+                    <img src="https://images.unsplash.com/photo-1704481235083-b70ae2ffee2b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="rounded" alt="" style="height: 400px;">
+                </div>
             </div>
         </div>
     </section>
@@ -62,115 +83,55 @@
             Explore nossa coleção de peças únicas, feitas com amor e dedicação por artesãos talentosos.
         </p>
 
-        <!-- Filtros de categoria -->
-        <ul class="nav justify-content-center mb-5">
-            <li class="nav-item"><a href="#" class="nav-link active cor-p1">Todos</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark">Cerâmica</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark">Joias</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark">Têxtil</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark">Madeira</a></li>
-        </ul>
 
         <!-- Cards de produtos -->
         <div class="container">
             <div class="row gap-2 ">
                 <!-- Card 1 -->
                 <div class="col-md-4 py-2">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
+                    <div class="card shadow-sm h-100" data-produto-id="1" data-produto-nome="Vaso de Cerâmica" data-produto-preco="89.90" data-produto-artesao="João Santos" data-produto-imagem="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987">
+                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica">
                         <div class="card-body">
-                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
+                            <h5 class="card-title">Vaso de Cerâmica</h5>
                             <p class="card-text text-muted mb-1">por João Santos</p>
-                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89,90</span>
-                            <button class="btn btn-carrinho w-100">
-                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89.90</span>
+                            <button class="btn btn-carrinho w-100 btn-adicionar-carrinho">
+
                                 Adicionar ao Carrinho
                             </button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
+                <!--Card 2-->
                 <div class="col-md-4 py-2">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1612314317004-d650718f188a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=871" class="card-img-top card-img-fixed" alt="Anel de Pedra Natural">
+                    <div class="card shadow-sm h-100" data-produto-id="2" data-produto-nome="Anel de Pedra Natural" data-produto-preco="99.90" data-produto-artesao="Pedro Santos" data-produto-imagem="https://images.unsplash.com/photo-1612314317004-d650718f188a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=871">
+                        <img src="https://images.unsplash.com/photo-1612314317004-d650718f188a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=871" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
                         <div class="card-body">
                             <h5 class="card-title">Anel de Pedra Natural</h5>
                             <p class="card-text text-muted mb-1">por Pedro Santos</p>
-                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89,90</span>
-                            <button class="btn btn-carrinho w-100">
-                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                            <span class="fw-bold cor-p1 d-block mb-3">R$ 99.90</span>
+                            <button class="btn btn-carrinho w-100 btn-adicionar-carrinho">
                                 Adicionar ao Carrinho
                             </button>
                         </div>
                     </div>
                 </div>
+                <!--Card 3-->
 
-                <!-- Card 3 -->
                 <div class="col-md-4 py-2">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1727024418120-77e4e204d09f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=699" class="card-img-top card-img-fixed " alt="Tapete Vermelho Oriental">
+                    <div class="card shadow-sm h-100" data-produto-id="3" data-produto-nome="Tapete Vermelho Oriental" data-produto-preco="189,90" data-produto-artesao=" Maria Silva" data-produto-imagem="https://images.unsplash.com/photo-1727024418120-77e4e204d09f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=699">
+                        <img src="https://images.unsplash.com/photo-1727024418120-77e4e204d09f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=699" class="card-img-top card-img-fixed" alt="Tapete Vermelho Oriental">
                         <div class="card-body">
                             <h5 class="card-title">Tapete Vermelho Oriental</h5>
                             <p class="card-text text-muted mb-1">por Maria Silva</p>
-                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89,90</span>
-                            <button class="btn btn-carrinho w-100">
-                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
+                            <span class="fw-bold cor-p1 d-block mb-3">R$ 189,90</span>
+                            <button class="btn btn-carrinho w-100 btn-adicionar-carrinho">
                                 Adicionar ao Carrinho
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="col-md-4 py-2">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1761238498265-88e899ad07dc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
-                        <div class="card-body">
-                            <h5 class="card-title">Escultura de Pato em Madeira</h5>
-                            <p class="card-text text-muted mb-1">por Eduardo Costa</p>
-                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89,90</span>
-                            <button class="btn btn-carrinho w-100">
-                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-md-4 py-2">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="card-img-top card-img-fixed" alt="Tigelas de Cerâmica">
-                        <div class="card-body">
-                            <h5 class="card-title">Tigelas de Cerâmica</h5>
-                            <p class="card-text text-muted mb-1">por João Santos</p>
-                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89,90</span>
-                            <button class="btn btn-carrinho w-100">
-                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-md-4 py-2">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1758974504487-74d46fa07242?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="card-img-top card-img-fixed" alt="Brincos de malaquita">
-                        <div class="card-body">
-                            <h5 class="card-title">Brincos de Malaquita</h5>
-                            <p class="card-text text-muted mb-1">por Pedro Santos</p>
-                            <span class="fw-bold cor-p1 d-block mb-3">R$ 89,90</span>
-                            <button class="btn btn-carrinho w-100">
-                                <img src="icon-carrinho.png" alt="" width="18" class="me-2">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- Seção dos Artesãos -->
@@ -230,7 +191,7 @@
     </section>
 
     <!-- Seção de informações -->
-    <section class="info py-2">
+    <section class="info py-2 ">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-lg-6">
@@ -279,60 +240,63 @@
     </section>
 
     <!--Call to action-->
-    <div class="container justify-content-center bg-light">
-        <div class="row">
-            <!--Contato-->
-            <address class="py-5 col text-center">
-                <h1 class="cor-p1">Entre em Contato</h1>
-                <p class="text-muted">Tem alguma dúvida ou sugestão? Estamos aqui para ajudar!</p>
-                <div class="col">
-                    <div class="border-0 shadow-sm text-center p-3 bg">
-                        <span class="cor-p1">Email</span> <br>
-                        <span class="text-muted">contato@artesaoonline.com.br </span><br>
+    <section class="bg-light">
+        <div class="container justify-content-center bg-light">
+            <div class="row">
+                <!--Contato-->
+                <address class="py-5 col text-center">
+                    <h1 class="cor-p1">Entre em Contato</h1>
+                    <p class="text-muted">Tem alguma dúvida ou sugestão? Estamos aqui para ajudar!</p>
+                    <div class="col">
+                        <div class="border-0 shadow-sm text-center p-3 bg">
+                            <span class="cor-p1">Email</span> <br>
+                            <span class="text-muted">contato@artesaoonline.com.br </span><br>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col py-5">
-                    <div class="border-0 shadow-sm text-center p-3 bg">
-                        <span class="cor-p1">Telefone</span> <br>
-                        <span class="text-muted">(11) 9999-9999</span> <br>
+                    <div class="col py-5">
+                        <div class="border-0 shadow-sm text-center p-3 bg">
+                            <span class="cor-p1">Telefone</span> <br>
+                            <span class="text-muted">(11) 9999-9999</span> <br>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col">
-                    <div class="border-0 shadow-sm text-center p-3 bg">
-                        <span class="cor-p1">Endereço</span> <br>
-                        <span class="text-muted">São Paulo, SP
-                            Brasil</span>
+                    <div class="col">
+                        <div class="border-0 shadow-sm text-center p-3 bg">
+                            <span class="cor-p1">Endereço</span> <br>
+                            <span class="text-muted">São Paulo, SP
+                                Brasil</span>
+                        </div>
                     </div>
-                </div>
-            </address>
-            <!--Formulário-->
-            <form action="" class="p-4 rounded bg-light col text-muted">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
-                </div>
+                </address>
+                <!--Formulário-->
+                <form action="" class="p-4 rounded bg-light col text-muted">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com">
-                </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="assunto" class="form-label">Assunto</label>
-                    <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Digite o assunto">
-                </div>
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Digite o assunto">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
-                </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+                    </div>
 
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
-            </form>
-        </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+    </section>
     </div>
+
     <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container text-md-left">
             <div class="row text-md-left">
@@ -345,7 +309,7 @@
                         <img src="assets/icons/twitter-fill-svgrepo-com.svg" alt="ícone 1" width="24">
                         <img src="assets/icons/whatsapp-fill-svgrepo-com.svg" alt="ícone 2" width="24">
                         <img src="assets/icons/facebook-svgrepo-com.svg" alt="ícone 3" width="24">
-                        <img src="icone4.png" alt="ícone 4" width="24">
+
                     </div>
                 </div>
 
@@ -390,7 +354,7 @@
 
                 <div class="row align-items-center">
                     <div class="col-md-8 col-lg-8">
-                        <p class="mb-0">&copy-2; 2025 Artesanato On-line — Todos os direitos reservados.</p>
+                        <p class="mb-0">&copy; 2025 Artesanato On-line — Todos os direitos reservados.</p>
                     </div>
                     <div class="col-md-4 col-lg-4 text-md-end">
                     </div>
@@ -399,7 +363,67 @@
 
 
     </footer>
+    <!-- Modal do Carrinho -->
+    <div class="modal fade" id="modalCarrinho" tabindex="-1" aria-labelledby="modalCarrinhoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title cor-p1" id="modalCarrinhoLabel">🛒 Seu Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carrinho-vazio" class="text-center py-4">
+                        <p class="text-muted">Seu carrinho está vazio</p>
+                        <button class="btn btn-carrinho" data-bs-dismiss="modal">Continuar Comprando</button>
+                    </div>
 
+                    <div id="carrinho-itens" style="display: none;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Preço</th>
+                                        <th>Quantidade</th>
+                                        <th>Subtotal</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="itens-carrinho-tbody">
+                                    <!-- Itens do carrinho-->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <div>
+                                <strong>Total: R$ <span id="total-carrinho">0,00</span></strong>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-secondary me-2" onclick="carrinho.limparCarrinho()">Limpar Carrinho</button>
+                                <button class="btn btn-carrinho" onclick="carrinho.finalizarCompra()">Finalizar Compra</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--notificações -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastCarrinho" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto cor-p1">Carrinho</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-message">
+                Produto adicionado ao carrinho!
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/adicionaCarrinho.js"></script>
 </body>
 
 </html>

@@ -4,169 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
-    <title>Artesanato on-line</title>
+    <title>Finalizar Compra - Artesanato Online</title>
 </head>
 
 <body class="bg-light">
+    <!-- Header-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container">
+                <img class="logo icon" src="assets/icons/pottery.png" alt="logo artesão" />
+                <a class="navbar-brand" href="index.html">Início</a>
+                <a class="navbar-brand" href="index.html#produtos">Produtos</a>
+                <a class="navbar-brand" href="index.html#artesoes">Artesãos</a>
+                <a class="navbar-brand" href="#">Sobre</a>
+                <a class="navbar-brand" href="#">Contato</a>
 
-    <main class="container">
-        <div class="row justify-content-center mt-5">
-            <h1 class="cor-p1">Finalizar Compra</h1>
-        </div>
+                <div class="d-flex align-items-center">
 
-        <div class="row justify-content-center mt-4">
-            <form action="" class="col rounded py-4">
-                <!-- Informações Pessoais -->
-                <div class="informacoes-pessoais row justify-content-center ">
+                    <div class="carrinho-wrapper position-relative">
+                        <a href="index.html" class="btn btn-carrinho position-relative">
 
-                    <div class="col-lg-5 bg-branco py-4 border rounded">
-                        <h1 class="h3 cor-p1">Informações Pessoais</h1>
-
-                        <div class=" py-4">
-                            <label for="nome-completo" class="form-label">Nome Completo </label>
-                            <input type="text" class="form-control" id="nome-completo" name="nome-completo" placeholder="Digite seu nome completo">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com">
-                        </div>
-
-                        <div class="">
-                            <label for="tel" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" id="tel" name="tel" placeholder="(11 99999-9999)">
-                        </div>
-                    </div>
-                </div>
-                <!-- Endereço de entrega -->
-                <div class="endereco-entrega row justify-content-center mt-5">
-
-                    <div class="col-lg-5 bg-branco py-4 border rounded">
-                        <div class="">
-                            <h1 class="h3 cor-p1">Endereço de Entrega</h1>
-                            <div class="py-4">
-                                <label for="cep" class="form-label">CEP</label>
-                                <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="endereço" class="form-label">Endereço</label>
-                                <input type="text" class="form-control" id="endereço" name="endereço" placeholder="Rua, Avenida, Alameda, etc">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="numero" class="form-label">Número</label>
-                                <input type="text" class="form-control" id="numero" name="numero" placeholder="123">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="complemento" class="form-label">Complemento</label>
-                                <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apto, bloco, quadra, etc">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="cidade" class="form-label">Cidade</label>
-                                <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Nome da Cidade">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="estado" class="form-label">Estado</label>
-                                <input type="text" class="form-control" id="estado" name="estado" placeholder="SP">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Forma de pagamento -->
-                <div class="forma-pagamento row justify-content-center mt-5">
-
-                    <div class="col-lg-5 bg-branco py-4 border rounded">
-                        <h1 class="h3 cor-p1">Forma de pagamento</h1>
-
-                        <a href="#/">
-                            <div class=" border py-4 cartao rounded">
-                                <h3 class="h6 text-center">Cartão de crédito</h3>
-                            </div>
+                            Voltar às Compras
                         </a>
-
-
-                        <div class="py-4">
-                            <label for="numero-cartao" class="form-label">Número do Cartão</label>
-                            <input type="text" class="form-control" id="numero-cartao" name="numero-cartao" placeholder="0000 0000 0000 0000">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="nome-no-cartao" class="form-label">Nome no Cartão</label>
-                            <input type="text" class="form-control" id="nome-no-cartao" name="nome-no-cartao" placeholder="Nome como está no cartão">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="Validade" class="form-label">Validade</label>
-                            <input type="text" class="form-control" id="Validade" name="Validade" placeholder="MM/AA">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="CVV" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="CVV" name="CVV" placeholder="123">
-                        </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Resumo do pedido -->
-        <div class="card-resumo-pedido container ">
-            <div class="row justify-content-center">
-                <div class="">
-                    <h1 class="cor-p1">Resumo do pedido</h1>
+    <main class="container my-5">
+        <div class="row">
+            <!--Formulário -->
+            <div class="col-lg-8">
+                <div class="bg-white rounded shadow-sm p-4">
+                    <h1 class="h3 mb-4 cor-p1">Finalizar Compra</h1>
+
+                    <form id="form-finalizar-compra">
+                        <!-- Informações Pessoais -->
+                        <div class="mb-5">
+                            <h2 class="h4 cor-p1 mb-3">Informações Pessoais</h2>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="nome-completo" class="form-label">Nome Completo *</label>
+                                    <input type="text" class="form-control" id="nome-completo" name="nome-completo" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">E-mail *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="telefone" class="form-label">Telefone *</label>
+                                    <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Endereço de Entrega -->
+                        <div class="mb-5">
+                            <h2 class="h4 cor-p1 mb-3">Endereço de Entrega</h2>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cep" class="form-label">CEP *</label>
+                                    <input type="text" class="form-control" id="cep" name="cep" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="endereco" class="form-label">Endereço *</label>
+                                    <input type="text" class="form-control" id="endereco" name="endereco" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="numero" class="form-label">Número *</label>
+                                    <input type="text" class="form-control" id="numero" name="numero" required>
+                                </div>
+                                <div class="col-md-8 mb-3">
+                                    <label for="complemento" class="form-label">Complemento</label>
+                                    <input type="text" class="form-control" id="complemento" name="complemento">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cidade" class="form-label">Cidade *</label>
+                                    <input type="text" class="form-control" id="cidade" name="cidade" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="estado" class="form-label">Estado *</label>
+                                    <select class="form-select" id="estado" name="estado" required>
+                                        <option value="">Selecione</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Forma de Pagamento -->
+                        <div class="mb-4">
+                            <h2 class="h4 cor-p1 mb-3">Forma de Pagamento</h2>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forma-pagamento" id="cartao-credito" value="cartao" checked>
+                                    <label class="form-check-label" for="cartao-credito">
+                                        Cartão de Crédito
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forma-pagamento" id="boleto" value="boleto">
+                                    <label class="form-check-label" for="boleto">
+                                        Boleto Bancário
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="forma-pagamento" id="pix" value="pix">
+                                    <label class="form-check-label" for="pix">
+                                        PIX
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Campos do Cartão-->
+                            <div id="campos-cartao">
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        <label for="numero-cartao" class="form-label">Número do Cartão *</label>
+                                        <input type="text" class="form-control" id="numero-cartao" name="numero-cartao" placeholder="0000 0000 0000 0000">
+                                    </div>
+                                    <div class="col-md-8 mb-3">
+                                        <label for="nome-cartao" class="form-label">Nome no Cartão *</label>
+                                        <input type="text" class="form-control" id="nome-cartao" name="nome-cartao">
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="validade" class="form-label">Validade *</label>
+                                        <input type="text" class="form-control" id="validade" name="validade" placeholder="MM/AA">
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="cvv" class="form-label">CVV *</label>
+                                        <input type="text" class="form-control" id="cvv" name="cvv" placeholder="123">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Informações para PIX -->
+                            <div id="info-pix" class="alert alert-info" style="display: none;">
+                                <strong>Pagamento via PIX</strong><br>
+                                Após finalizar o pedido, você receberá um QR Code para pagamento.
+                            </div>
+
+                            <!-- Informações para Boleto -->
+                            <div id="info-boleto" class="alert alert-info" style="display: none;">
+                                <strong>Pagamento via Boleto</strong><br>
+                                O boleto será gerado após a finalização do pedido e enviado para seu e-mail.
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <div class="container bg-branco py-5 rounded border mt-5">
-                <div class="row justify-content-center">
+            <!-- Resumo do Pedido -->
+            <div class="col-lg-4">
+                <div class="bg-white rounded shadow-sm p-4 sticky-top" style="top: 20px;">
+                    <h2 class="h4 cor-p1 mb-4">Resumo do Pedido</h2>
 
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
-                        <div class="card-body">
-                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
-                            <p class="card-text text-muted mb-1">Qtd:</p>
-                            <span class="fw-bold text-warning d-block mb-3">R$ 89,90</span>
+                    <div id="resumo-pedido">
+                        <!-- Itens-->
+                        <div id="resumo-vazio" class="text-center py-4">
+                            <p class="text-muted">Carrinho vazio</p>
+                            <a href="index.html" class="btn btn-carrinho">Continuar Comprando</a>
                         </div>
                     </div>
 
-                    <div class="card shadow-sm h-100">
-                        <img src="https://images.unsplash.com/photo-1572982758354-c097406beae5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" class="card-img-top card-img-fixed" alt="Vaso de Cerâmica Artesanal">
-                        <div class="card-body">
-                            <h5 class="card-title">Vaso de Cerâmica Artesanal</h5>
-                            <p class="card-text text-muted mb-1">Qtd:</p>
-                            <span class="fw-bold text-warning d-block mb-3">R$ 89,90</span>
+                    <div class="border-top pt-3 mt-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Frete:</span>
+                            <span id="frete" class="text-success">Grátis</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 fs-5 fw-bold">
+                            <span>Total:</span>
+                            <span id="total">R$ 0,00</span>
+                        </div>
+
+                        <button type="submit" form="form-finalizar-compra" class="btn btn-carrinho w-100 btn-lg" id="btn-finalizar-pedido">
+                            Finalizar Pedido
+                        </button>
+
+                        <div class="text-center mt-2">
+                            <small class="text-muted">
+
+                                Sua compra está segura e protegida
+                            </small>
                         </div>
                     </div>
-                </div>
-
-                <div class="container text-center mt-5 text-muted">
-                    <div class="row">
-                        <p class="col">Subtotal</p>
-                        <p class="col">R$</p>
-                    </div>
-                    <div class="row">
-                        <p class="col">Frete</p>
-                        <p class="col text-secondary">Grátis</p>
-                    </div>
-                    <div class="row">
-                        <p class="col">Total</p>
-                        <p class="col text-secondary">Valor</p>
-                    </div>
-
-                    <button class="btn-carrinho col">Finalir Pedido</button>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Confirmação -->
+    <div class="modal fade" id="modalConfirmacao" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title cor-p1">Compra Finalizada!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-4">
+                        <img src="assets/icons/check-circle-svgrepo-com.svg" alt="Sucesso" width="80" class="text-success">
+                    </div>
+                    <h4 class="cor-p1">Obrigado pela sua compra!</h4>
+                    <p class="text-muted" id="mensagem-confirmacao">
+                        Seu pedido foi processado com sucesso.
+                    </p>
+                    <div class="alert alert-info">
+                        <strong>Número do Pedido:</strong>
+                        <span id="numero-pedido">#000000</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-carrinho" onclick="window.location.href='index.html'">
+                        Continuar Comprando
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/finalizar-compra.js"></script>
 </body>
 
 </html>
