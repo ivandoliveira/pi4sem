@@ -213,6 +213,7 @@ class FinalizarCompra {
         nome: formData.get("nome-completo"),
         email: formData.get("email"),
         telefone: formData.get("telefone"),
+        idCliente: JSON.parse(localStorage.getItem("user")).idCliente
       },
       endereco: {
         cep: formData.get("cep"),
@@ -224,7 +225,7 @@ class FinalizarCompra {
       },
       pagamento: {
         forma: formData.get("forma-pagamento"),
-        ...(formData.get("forma-pagamento") === "cartao" && {
+        ...(formData.get("forma-pagamento") === 2 && {
           cartao: {
             numero: formData.get("numero-cartao"),
             nome: formData.get("nome-cartao"),
@@ -239,32 +240,115 @@ class FinalizarCompra {
     this.criarPedido(dadosCliente);
   }
 
-  // Cria o pedido completo
-  criarPedido(dadosCliente) {
-    const numeroPedido = "PED" + Date.now().toString().slice(-6);
-    const total = this.carrinho.reduce(
-      (sum, item) => sum + item.preco * item.quantidade,
-      0
-    );
+async criarPedido(dadosCliente) {
+    try {
 
-    this.pedido = {
-      numero: numeroPedido,
-      data: new Date().toISOString(),
-      cliente: dadosCliente,
-      itens: [...this.carrinho],
-      total: total,
-      status: "confirmado",
-    };
+        const enderecoPayload = {
+            idCliente: dadosCliente.pessoais.idCliente,
+            nomeEndereco: "Casa Principal",
+            logradouro: dadosCliente.endereco.endereco,
+            numero: dadosCliente.endereco.numero,
+            cep: dadosCliente.endereco.cep,
+            cidade: dadosCliente.endereco.cidade,
+            uf: dadosCliente.endereco.estado,
+            complemento: dadosCliente.endereco.complemento
+        };
 
-    // Salva o pedido no localStorage
-    this.salvarPedido();
 
-    // Limpa o carrinho
+        const enderecoResp = await fetch(
+            "http://localhost/ecommerce_api/api/endereco/create.php",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(enderecoPayload)
+            }
+        );
+
+        const enderecoData = await enderecoResp.json();
+
+        if (!enderecoResp.ok) {
+            console.error("Erro ao salvar endereço:", enderecoData);
+            alert("Erro ao salvar endereço: " + enderecoData.message);
+            return;
+        }
+
+        const idEndereco = enderecoData.idEndereco;
+        console.log("Endereço criado com sucesso. ID:", idEndereco);
+
+        const itensPedido = this.carrinho.map((item) => ({
+            idProduto: item.id,
+            qtdProduto: item.quantidade,
+            precoVendaItem: item.preco
+        }));
+
+        const pedidoPayload = {
+            idCliente: dadosCliente.pessoais.idCliente,
+            idTipoPagto: 2, // ex: 1 = cartão, 2 = pix, etc.
+            idAplicacao: 2, 
+            idEndereco: idEndereco,
+            idStatus: 1, 
+            itens: itensPedido
+        };
+
+        const pedidoResp = await fetch(
+            "http://localhost/ecommerce_api/api/pedido/create.php",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(pedidoPayload)
+            }
+        );
+
+        const pedidoData = await pedidoResp.json();
+
+        if (!pedidoResp.ok) {
+            console.error("Erro ao criar pedido:", pedidoData);
+            alert("Erro ao criar pedido: " + pedidoData.message);
+            return;
+        }
+
+        console.log("Pedido criado com sucesso!", pedidoData);
+
+
+        this.pedido = pedidoData;
+
+        this.salvarPedido();
+
+        this.limparFormulario();
+
+        this.mostrarConfirmacao(pedidoData.idPedido);
+
+    } catch (erro) {
+        console.error("Erro geral:", erro);
+        alert("Erro inesperado ao finalizar pedido.");
+    }
+}
+
+limparFormulario() {
+    const form = document.getElementById("form-finalizar-compra");
+    form.reset();
+
+    document.getElementById("info-pix").style.display = "none";
+    document.getElementById("info-boleto").style.display = "none";
+
+    const camposCartao = document.querySelectorAll("#campos-cartao input");
+    camposCartao.forEach(input => input.value = "");
+
     this.limparCarrinho();
+    this.carregarResumoPedido();
 
-    // Mostra confirmação
-    this.mostrarConfirmacao();
-  }
+    document.getElementById("subtotal").innerText = "R$ 0,00";
+    document.getElementById("frete").innerText = "Grátis";
+    document.getElementById("total").innerText = "R$ 0,00";
+
+    const btnLimpar = document.createElement("button");
+    btnLimpar.type = "button";
+    btnLimpar.className = "btn btn-secondary mt-3";
+    btnLimpar.innerText = "Limpar Formulário";
+    btnLimpar.onclick = () => this.limparFormulario();
+    form.appendChild(btnLimpar);
+}
+
 
   // Salva o pedido no histórico
   salvarPedido() {
@@ -280,17 +364,8 @@ class FinalizarCompra {
   }
 
   // Mostra modal de confirmação
-  mostrarConfirmacao() {
-    document.getElementById("numero-pedido").textContent = this.pedido.numero;
-
-    const mensagem =
-      this.pedido.cliente.pagamento.forma === "pix"
-        ? "Você receberá um QR Code PIX para pagamento em seu e-mail."
-        : this.pedido.cliente.pagamento.forma === "boleto"
-        ? "O boleto será enviado para seu e-mail em até 5 minutos."
-        : "Seu pagamento foi processado com sucesso!";
-
-    document.getElementById("mensagem-confirmacao").textContent = mensagem;
+  mostrarConfirmacao(idPedido) {
+    document.getElementById("numero-pedido").textContent = idPedido;
 
     const modal = new bootstrap.Modal(
       document.getElementById("modalConfirmacao")
@@ -312,13 +387,11 @@ class FinalizarCompra {
   }
 }
 
-// Inicializa o sistema quando a página carrega
 let finalizarCompra;
 
 document.addEventListener("DOMContentLoaded", function () {
   finalizarCompra = new FinalizarCompra();
 
-  // Atualiza forma de pagamento inicial
   const formaInicial = document.querySelector(
     'input[name="forma-pagamento"]:checked'
   ).value;
