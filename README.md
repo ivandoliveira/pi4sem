@@ -1,5 +1,3 @@
----
-
 # 📘 Projeto Ecommerce API – README
 
 ## 👥 Integrantes do Grupo
