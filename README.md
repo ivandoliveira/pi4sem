@@ -16,6 +16,15 @@ Este documento explica como rodar o projeto **ecommerce_api** usando o **XAMPP**
 
 ---
 
+## Tecnologias Utilizadas
+
+* XAMPP (Apache + MySQL)
+* PHP
+* JavaScript
+* HTML
+* CSS
+---
+
 ## 🧩 1. Pré-requisitos
 
 * XAMPP instalado (Apache + MySQL)
